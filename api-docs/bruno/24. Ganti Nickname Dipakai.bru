@@ -1,0 +1,30 @@
+meta {
+  name: 24. Ganti Nickname Dipakai
+  type: http
+  seq: 24
+}
+
+patch {
+  url: {{baseUrl}}/api/players/3
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nickname": "ArekITS"
+  }
+}
+
+assert {
+  res.status: eq 409
+}
+
+docs {
+  PATCH /api/players/3
+  Hasil yang benar: 409
+}

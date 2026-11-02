@@ -1,0 +1,31 @@
+meta {
+  name: 20. Beli Layla Lagi (Sudah Punya)
+  type: http
+  seq: 20
+}
+
+post {
+  url: {{baseUrl}}/api/players/3/heroes
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "heroId": 18,
+    "currency": "DIAMOND"
+  }
+}
+
+assert {
+  res.status: eq 409
+}
+
+docs {
+  POST /api/players/3/heroes
+  Hasil yang benar: 409 (sudah punya Layla)
+}

@@ -1,0 +1,35 @@
+meta {
+  name: 06. Tambah Hero Collie
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/api/heroes
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Collie",
+    "role": "MAGE",
+    "lane": "MID",
+    "releaseYear": 2026,
+    "priceBP": 32000,
+    "priceDiamond": 599
+  }
+}
+
+assert {
+  res.status: eq 201
+}
+
+docs {
+  POST /api/heroes
+  Hasil yang benar: 201, id 134
+}

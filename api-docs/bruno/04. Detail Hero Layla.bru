@@ -1,0 +1,20 @@
+meta {
+  name: 04. Detail Hero Layla
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/heroes/18
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  GET /api/heroes/18
+  Hasil yang benar: 200, Layla dengan 11 skin
+}

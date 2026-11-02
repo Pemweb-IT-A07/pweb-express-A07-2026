@@ -1,0 +1,20 @@
+meta {
+  name: 11. Detail Skin Silverbolt Raiko
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/api/skins/891
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  GET /api/skins/891
+  Hasil yang benar: 200, Silverbolt Raiko (Selena)
+}

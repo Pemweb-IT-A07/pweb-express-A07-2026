@@ -1,0 +1,24 @@
+meta {
+  name: 03. Cari Hero 'la'
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/heroes?search=la
+  body: none
+  auth: none
+}
+
+params:query {
+  search: la
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  GET /api/heroes?search=la
+  Hasil yang benar: 200, totalItems 10
+}

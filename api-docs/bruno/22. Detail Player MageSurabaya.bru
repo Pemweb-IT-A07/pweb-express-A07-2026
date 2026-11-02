@@ -1,0 +1,20 @@
+meta {
+  name: 22. Detail Player MageSurabaya
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{baseUrl}}/api/players/3
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  GET /api/players/3
+  Hasil yang benar: 200, punya Freya dan Layla
+}

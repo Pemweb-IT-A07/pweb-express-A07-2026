@@ -1,0 +1,30 @@
+meta {
+  name: 14. Top Up 706 Diamond
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{baseUrl}}/api/players/3/topup
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "amount": 706
+  }
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  POST /api/players/3/topup
+  Hasil yang benar: 200, diamond 706
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 05. Detail Hero Tidak Ada
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/heroes/999
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+}
+
+docs {
+  GET /api/heroes/999
+  Hasil yang benar: 404
+}

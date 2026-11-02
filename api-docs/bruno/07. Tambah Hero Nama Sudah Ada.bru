@@ -1,0 +1,35 @@
+meta {
+  name: 07. Tambah Hero Nama Sudah Ada
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/heroes
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Collie",
+    "role": "MAGE",
+    "lane": "MID",
+    "releaseYear": 2026,
+    "priceBP": 32000,
+    "priceDiamond": 599
+  }
+}
+
+assert {
+  res.status: eq 409
+}
+
+docs {
+  POST /api/heroes
+  Hasil yang benar: 409
+}

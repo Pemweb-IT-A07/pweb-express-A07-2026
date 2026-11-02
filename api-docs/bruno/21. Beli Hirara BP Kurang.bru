@@ -1,0 +1,31 @@
+meta {
+  name: 21. Beli Hirara BP Kurang
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{baseUrl}}/api/players/1/heroes
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "heroId": 133,
+    "currency": "BP"
+  }
+}
+
+assert {
+  res.status: eq 400
+}
+
+docs {
+  POST /api/players/1/heroes
+  Hasil yang benar: 400 (BP kurang)
+}

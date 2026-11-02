@@ -1,0 +1,20 @@
+meta {
+  name: 25. Statistik Toko
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{baseUrl}}/api/statistics
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  GET /api/statistics
+  Hasil yang benar: 200, sesuai gambar Fitur 7
+}

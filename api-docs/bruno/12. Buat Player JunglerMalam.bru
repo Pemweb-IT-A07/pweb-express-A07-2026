@@ -1,0 +1,30 @@
+meta {
+  name: 12. Buat Player JunglerMalam
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{baseUrl}}/api/players
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nickname": "JunglerMalam"
+  }
+}
+
+assert {
+  res.status: eq 201
+}
+
+docs {
+  POST /api/players
+  Hasil yang benar: 201, id 4
+}

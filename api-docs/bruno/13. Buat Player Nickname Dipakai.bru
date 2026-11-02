@@ -1,0 +1,30 @@
+meta {
+  name: 13. Buat Player Nickname Dipakai
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{baseUrl}}/api/players
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nickname": "ArekITS"
+  }
+}
+
+assert {
+  res.status: eq 409
+}
+
+docs {
+  POST /api/players
+  Hasil yang benar: 409
+}

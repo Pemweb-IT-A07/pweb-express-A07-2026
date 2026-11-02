@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "pweb-ts-A07-2026 - MLBB Shop",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

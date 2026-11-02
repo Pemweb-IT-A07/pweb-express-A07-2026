@@ -1,0 +1,20 @@
+meta {
+  name: 27. Detail Player Terhapus
+  type: http
+  seq: 27
+}
+
+get {
+  url: {{baseUrl}}/api/players/4
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+}
+
+docs {
+  GET /api/players/4
+  Hasil yang benar: 404
+}

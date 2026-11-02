@@ -1,0 +1,31 @@
+meta {
+  name: 19. Beli Layla Pakai BP
+  type: http
+  seq: 19
+}
+
+post {
+  url: {{baseUrl}}/api/players/3/heroes
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "heroId": 18,
+    "currency": "BP"
+  }
+}
+
+assert {
+  res.status: eq 201
+}
+
+docs {
+  POST /api/players/3/heroes
+  Hasil yang benar: 201, bp 8300
+}

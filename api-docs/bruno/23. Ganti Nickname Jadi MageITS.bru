@@ -1,0 +1,30 @@
+meta {
+  name: 23. Ganti Nickname Jadi MageITS
+  type: http
+  seq: 23
+}
+
+patch {
+  url: {{baseUrl}}/api/players/3
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nickname": "MageITS"
+  }
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  PATCH /api/players/3
+  Hasil yang benar: 200
+}

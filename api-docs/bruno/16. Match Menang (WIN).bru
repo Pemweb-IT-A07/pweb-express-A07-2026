@@ -1,0 +1,30 @@
+meta {
+  name: 16. Match Menang (WIN)
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{baseUrl}}/api/players/3/matches
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "result": "WIN"
+  }
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  POST /api/players/3/matches
+  Hasil yang benar: 200, bp 10300
+}

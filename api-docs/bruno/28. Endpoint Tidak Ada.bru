@@ -1,0 +1,20 @@
+meta {
+  name: 28. Endpoint Tidak Ada
+  type: http
+  seq: 28
+}
+
+get {
+  url: {{baseUrl}}/api/ngawur
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+}
+
+docs {
+  GET /api/ngawur
+  Hasil yang benar: 404
+}

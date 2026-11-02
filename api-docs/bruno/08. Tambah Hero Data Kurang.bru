@@ -1,0 +1,30 @@
+meta {
+  name: 08. Tambah Hero Data Kurang
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/api/heroes
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Kaiden"
+  }
+}
+
+assert {
+  res.status: eq 400
+}
+
+docs {
+  POST /api/heroes
+  Hasil yang benar: 400
+}

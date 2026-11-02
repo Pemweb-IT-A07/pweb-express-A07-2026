@@ -1,0 +1,24 @@
+meta {
+  name: 09. Daftar Skin Layla
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/api/skins?heroId=18
+  body: none
+  auth: none
+}
+
+params:query {
+  heroId: 18
+}
+
+assert {
+  res.status: eq 200
+}
+
+docs {
+  GET /api/skins?heroId=18
+  Hasil yang benar: 200, totalItems 11
+}

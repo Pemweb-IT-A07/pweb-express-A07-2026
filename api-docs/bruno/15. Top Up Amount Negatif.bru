@@ -1,0 +1,30 @@
+meta {
+  name: 15. Top Up Amount Negatif
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{baseUrl}}/api/players/3/topup
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "amount": -10
+  }
+}
+
+assert {
+  res.status: eq 400
+}
+
+docs {
+  POST /api/players/3/topup
+  Hasil yang benar: 400
+}

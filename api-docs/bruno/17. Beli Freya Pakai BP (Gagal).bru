@@ -1,0 +1,31 @@
+meta {
+  name: 17. Beli Freya Pakai BP (Gagal)
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{baseUrl}}/api/players/3/heroes
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "heroId": 22,
+    "currency": "BP"
+  }
+}
+
+assert {
+  res.status: eq 400
+}
+
+docs {
+  POST /api/players/3/heroes
+  Hasil yang benar: 400 (Freya tanpa harga BP)
+}
