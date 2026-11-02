@@ -3,6 +3,7 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 import { logger } from "./middlewares/logger.js";
 import { notFound } from "./middlewares/notFound.js";
 import heroRoutes from "./routes/hero.routes.js";
+import playerRoutes from "./routes/player.routes.js";
 import skinRoutes from "./routes/skin.routes.js";
 import { sendSuccess } from "./utils/response.js";
 
@@ -17,6 +18,7 @@ app.get("/health", (_req, res) => {
 
 app.use("/api/heroes", heroRoutes);
 app.use("/api/skins", skinRoutes);
+app.use("/api/players", playerRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
